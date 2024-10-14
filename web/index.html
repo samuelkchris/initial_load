@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta content="Flutter: Beautiful native apps in record time" name="description">
+  <meta content="Flutter, Dart, mobile development, cross-platform" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Flutter - Beautiful native apps</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+    .hero {
+        background-color: #0175C2;
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: white;
+        color: #0175C2;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+    }
+    .cta-button:hover {
+        background-color: #f0f0f0;
+    }
+    .button-loader {
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #0175C2;
+        border-top: 2px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 10px;
+    }
+    .loading-text {
+        display: none;
+        color: #0175C2;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 4rem 2rem;
+        background-color: #f5f5f5;
+    }
+    .feature {
+        flex-basis: calc(33.333% - 2rem);
+        margin: 1rem;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .feature img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .feature-content {
+        padding: 1.5rem;
+    }
+    .feature h2 {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    @media (max-width: 768px) {
+        .feature {
+            flex-basis: 100%;
+        }
+    }
+    #loader, #full-screen-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 9999;
+    }
+    .loader-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-loader {
+        width: 100px;
+        height: 100px;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+    .loader-text {
+        margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #0175C2;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<div id="loader" style="display: none;">
+  <div class="loader-container">
+    <img src="https://storage.googleapis.com/cms-storage-bucket/4fd0db61df0567c0f352.png" alt="Flutter Logo" class="logo-loader">
+    <div class="loader-text">Loading Flutter...</div>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>Flutter: Beautiful native apps</h1>
+  <p>Flutter is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.</p>
+  <button id="explore-flutter-button" class="cta-button" onclick="startApp()">
+    <div class="button-loader"></div>
+    <span class="button-text">Explore Flutter</span>
+    <span class="loading-text">Loading Flutter...</span>
+  </button>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <img src="https://picsum.photos/seed/flutter1/800/600" alt="Fast Development">
+    <div class="feature-content">
+      <h2>Fast Development</h2>
+      <p>Paint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.</p>
+    </div>
+  </div>
+  <div class="feature">
+    <img src="https://picsum.photos/seed/flutter2/800/600" alt="Expressive and Flexible UI">
+    <div class="feature-content">
+      <h2>Expressive and Flexible UI</h2>
+      <p>Quickly ship features with a focus on native end-user experiences. Layered architecture allows for full customization, which results in incredibly fast rendering and expressive and flexible designs.</p>
+    </div>
+  </div>
+  <div class="feature">
+    <img src="https://picsum.photos/seed/flutter3/800/600" alt="Native Performance">
+    <div class="feature-content">
+      <h2>Native Performance</h2>
+      <p>Flutter's widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using Dart's native compilers.</p>
+    </div>
+  </div>
+</section>
+
+<script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
